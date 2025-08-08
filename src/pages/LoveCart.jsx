@@ -11,6 +11,7 @@ import LoveConsultationForm from "../components/love/LoveConsultationForm";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import WhyPeopleLoveSection from "../components/love/WhyPeopleLoveSection";
+import { BACKEND_URL } from "../utils/backendUrl";
 
 function LoveCart() {
   const navigate = useNavigate();
@@ -101,7 +102,7 @@ function LoveCart() {
     const timer = setTimeout(() => {
       setAnimateElements(true);
     }, 100);
-    
+
     return () => {
       clearTimeout(timer);
     };
@@ -178,7 +179,7 @@ function LoveCart() {
       setIsCheckingOut(true);
 
       const res = await axios.post(
-        "https://skyscale-be.onrender.com/api/payment/razorpay2",
+        `${BACKEND_URL}/api/payment/razorpay`,
         {
           amount: total,
         }
@@ -195,7 +196,7 @@ function LoveCart() {
         order_id: data.orderId,
         handler: async function (response) {
           try {
-            await axios.post("https://skyscale-be.onrender.com/api/create-order2", {
+            await axios.post(`${BACKEND_URL}/api/lander2/create-order`, {
               amount: total,
               razorpayOrderId: response.razorpay_order_id,
               razorpayPaymentId: response.razorpay_payment_id,
@@ -210,7 +211,7 @@ function LoveCart() {
               orderId: data.orderId,
               additionalProducts: additionalProducts,
             });
-            
+
             navigate("/order-confirmation", {
               state: {
                 orderId: data.orderId,
@@ -266,13 +267,12 @@ function LoveCart() {
             }}
           >
             <div
-              className={`w-1 h-1 rounded-full ${
-                i % 3 === 0
+              className={`w-1 h-1 rounded-full ${i % 3 === 0
                   ? "bg-rose-400"
                   : i % 3 === 1
-                  ? "bg-pink-400"
-                  : "bg-purple-400"
-              } opacity-60`}
+                    ? "bg-pink-400"
+                    : "bg-purple-400"
+                } opacity-60`}
             ></div>
           </div>
         ))}
@@ -283,11 +283,10 @@ function LoveCart() {
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div
-            className={`text-center mb-4 sm:mb-6 px-4 mt-4 sm:mt-6 transition-all duration-1000 transform ${
-              animateElements
+            className={`text-center mb-4 sm:mb-6 px-4 mt-4 sm:mt-6 transition-all duration-1000 transform ${animateElements
                 ? "translate-y-0 opacity-100"
                 : "translate-y-8 opacity-0"
-            }`}
+              }`}
           >
             <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-1 sm:mb-2">
               <span className="bg-gradient-to-r from-rose-600 via-pink-500 to-purple-600 bg-clip-text text-transparent animate-pulse">
@@ -302,11 +301,10 @@ function LoveCart() {
           {cartItems.length === 0 ? (
             /* Empty Cart */
             <div
-              className={`max-w-2xl px-4 mx-auto transition-all duration-1000 delay-300 transform ${
-                animateElements
+              className={`max-w-2xl px-4 mx-auto transition-all duration-1000 delay-300 transform ${animateElements
                   ? "translate-y-0 opacity-100 scale-100"
                   : "translate-y-8 opacity-0 scale-95"
-              }`}
+                }`}
             >
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-rose-500/20 via-pink-500/20 to-purple-500/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
@@ -335,24 +333,21 @@ function LoveCart() {
             <>
               {/* Cart Items - Mobile Layout */}
               <div
-                className={`lg:hidden grid grid-cols-1 px-4 gap-4 sm:gap-6 transition-all duration-1000 delay-500 transform ${
-                  animateElements
+                className={`lg:hidden grid grid-cols-1 px-4 gap-4 sm:gap-6 transition-all duration-1000 delay-500 transform ${animateElements
                     ? "translate-y-0 opacity-100"
                     : "translate-y-8 opacity-0"
-                }`}
+                  }`}
               >
                 {/* Cart Items List */}
                 <div className="space-y-4 sm:space-y-6">
                   {cartItems.map((item, index) => (
                     <div
                       key={item.id}
-                      className={`transition-all duration-700 delay-${
-                        index * 200
-                      } transform ${
-                        animateElements
+                      className={`transition-all duration-700 delay-${index * 200
+                        } transform ${animateElements
                           ? "translate-x-0 opacity-100"
                           : "translate-x-8 opacity-0"
-                      }`}
+                        }`}
                     >
                       <LoveCartItem item={item} onRemove={removeItem} showRemoveButton={false} />
                     </div>
@@ -363,11 +358,10 @@ function LoveCart() {
                 <div className="space-y-4 sm:space-y-6">
                   {/* Additional Products Section */}
                   <div
-                    className={`transition-all duration-700 delay-700 transform ${
-                      animateElements
+                    className={`transition-all duration-700 delay-700 transform ${animateElements
                         ? "translate-y-0 opacity-100"
                         : "translate-y-8 opacity-0"
-                    }`}
+                      }`}
                   >
                     <LoveAdditionalProducts
                       products={additionalProducts}
@@ -378,11 +372,10 @@ function LoveCart() {
 
                   {/* Consultation Form */}
                   <div
-                    className={`transition-all duration-700 delay-800 transform ${
-                      animateElements
+                    className={`transition-all duration-700 delay-800 transform ${animateElements
                         ? "translate-y-0 opacity-100"
                         : "translate-y-8 opacity-0"
-                    }`}
+                      }`}
                   >
                     <LoveConsultationForm
                       onSubmit={handleConsultationFormSubmit}
@@ -393,11 +386,10 @@ function LoveCart() {
 
                   {/* Order Summary */}
                   <div
-                    className={`transition-all duration-700 delay-900 transform ${
-                      animateElements
+                    className={`transition-all duration-700 delay-900 transform ${animateElements
                         ? "translate-y-0 opacity-100"
                         : "translate-y-8 opacity-0"
-                    }`}
+                      }`}
                   >
                     <LoveOrderSummary
                       subtotal={subtotal}
@@ -412,77 +404,72 @@ function LoveCart() {
 
               {/* Desktop Layout */}
               <div
-                className={`hidden lg:block px-4 transition-all duration-1000 delay-500 transform ${
-                  animateElements
+                className={`hidden lg:block px-4 transition-all duration-1000 delay-500 transform ${animateElements
                     ? "translate-y-0 opacity-100"
                     : "translate-y-8 opacity-0"
-                }`}
+                  }`}
               >
                 <div className="max-w-6xl mx-auto space-y-8">
                   {/* Main Cart Item */}
                   <div
-                    className={`transition-all duration-700 delay-200 transform ${
-                      animateElements
+                    className={`transition-all duration-700 delay-200 transform ${animateElements
                         ? "translate-x-0 opacity-100"
                         : "translate-x-8 opacity-0"
-                    }`}
+                      }`}
                   >
-                                         {cartItems.map((item) => (
-                       <LoveCartItem
-                         key={item.id}
-                         item={item}
-                         onRemove={removeItem}
-                         showRemoveButton={false}
-                       />
-                     ))}
+                    {cartItems.map((item) => (
+                      <LoveCartItem
+                        key={item.id}
+                        item={item}
+                        onRemove={removeItem}
+                        showRemoveButton={false}
+                      />
+                    ))}
                   </div>
 
-                                     {/* Additional Products Section */}
-                   <div
-                     className={`transition-all duration-700 delay-400 transform ${
-                       animateElements
-                         ? "translate-y-0 opacity-100"
-                         : "translate-y-8 opacity-0"
-                     }`}
-                   >
-                     <LoveAdditionalProducts
-                       products={additionalProducts}
-                       selectedProducts={selectedProducts}
-                       onProductToggle={onProductToggle}
-                     />
-                   </div>
+                  {/* Additional Products Section */}
+                  <div
+                    className={`transition-all duration-700 delay-400 transform ${animateElements
+                        ? "translate-y-0 opacity-100"
+                        : "translate-y-8 opacity-0"
+                      }`}
+                  >
+                    <LoveAdditionalProducts
+                      products={additionalProducts}
+                      selectedProducts={selectedProducts}
+                      onProductToggle={onProductToggle}
+                    />
+                  </div>
 
-                                     {/* Consultation Form */}
-                   <div
-                     className={`transition-all duration-700 delay-600 transform ${
-                       animateElements
-                         ? "translate-y-0 opacity-100"
-                         : "translate-y-8 opacity-0"
-                     }`}
-                   >
-                     <LoveConsultationForm
-                       onSubmit={handleConsultationFormSubmit}
-                       formData={consultationFormData}
-                       setFormData={setConsultationFormData}
-                     />
-                   </div>
+                  {/* Consultation Form */}
+                  <div
+                    className={`transition-all duration-700 delay-600 transform ${animateElements
+                        ? "translate-y-0 opacity-100"
+                        : "translate-y-8 opacity-0"
+                      }`}
+                  >
+                    <LoveConsultationForm
+                      onSubmit={handleConsultationFormSubmit}
+                      formData={consultationFormData}
+                      setFormData={setConsultationFormData}
+                    />
+                  </div>
 
-                                     {/* Order Summary */}
-                   <div
-                     className={`transition-all duration-700 delay-800 transform ${
-                       animateElements
-                         ? "translate-y-0 opacity-100"
-                         : "translate-y-8 opacity-0"
-                     }`}
-                   >
-                     <LoveOrderSummary
-                       subtotal={subtotal}
-                       discount={discount}
-                       total={total}
-                       isCheckingOut={isCheckingOut}
-                       onCheckout={handleCheckout}
-                     />
-                   </div>
+                  {/* Order Summary */}
+                  <div
+                    className={`transition-all duration-700 delay-800 transform ${animateElements
+                        ? "translate-y-0 opacity-100"
+                        : "translate-y-8 opacity-0"
+                      }`}
+                  >
+                    <LoveOrderSummary
+                      subtotal={subtotal}
+                      discount={discount}
+                      total={total}
+                      isCheckingOut={isCheckingOut}
+                      onCheckout={handleCheckout}
+                    />
+                  </div>
                 </div>
               </div>
             </>

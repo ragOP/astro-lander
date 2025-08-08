@@ -10,6 +10,7 @@ import AdditionalProducts from "../components/AdditionalProducts";
 import ConsultationForm from "../components/ConsultationForm";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { BACKEND_URL } from "../utils/backendUrl";
 
 function Cart() {
   const navigate = useNavigate();
@@ -182,7 +183,7 @@ function Cart() {
       setIsCheckingOut(true);
 
       const res = await axios.post(
-        "https://skyscale-be.onrender.com/api/payment/razorpay",
+        `${BACKEND_URL}/api/payment/razorpay`,
         {
           amount: total,
         }
@@ -199,7 +200,7 @@ function Cart() {
         order_id: data.orderId,
         handler: async function (response) {
           try {
-            await axios.post("https://skyscale-be.onrender.com/api/create-order", {
+            await axios.post(`${BACKEND_URL}/api/lander1/create-order`, {
               amount: total,
               razorpayOrderId: response.razorpay_order_id,
               razorpayPaymentId: response.razorpay_payment_id,
@@ -210,7 +211,7 @@ function Cart() {
               dateOfBirth: consultationFormData?.dateOfBirth,
               placeOfBirth: consultationFormData?.placeOfBirth,
               gender: consultationFormData?.gender,
-              preferredDateTime: consultationFormData?.preferredDateTime,
+              prefferedDateAndTime: consultationFormData?.preferredDateTime,
               orderId: data.orderId,
               additionalProducts: additionalProducts,
             });

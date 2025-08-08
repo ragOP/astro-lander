@@ -9,6 +9,7 @@ import SignatureConsultationForm from "../components/signature/SignatureConsulta
 import SignatureOrderSummary from "../components/signature/SignatureOrderSummary";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { BACKEND_URL } from "../utils/backendUrl";
 
 function SignatureCart() {
   const navigate = useNavigate();
@@ -110,7 +111,7 @@ function SignatureCart() {
       setIsCheckingOut(true);
 
       const res = await axios.post(
-        "https://skyscale-be.onrender.com/api/payment/razorpay4",
+        `${BACKEND_URL}/api/payment/razorpay`,
         {
           amount: 2,
           // amount: total,
@@ -129,7 +130,7 @@ function SignatureCart() {
         order_id: data.orderId,
         handler: async function (response) {
           try {
-            await axios.post("https://skyscale-be.onrender.com/api/create-order4", {
+            await axios.post(`${BACKEND_URL}/api/lander4/create-order`, {
               amount: 2,
               // amount: total,
               razorpayOrderId: response.razorpay_order_id,
