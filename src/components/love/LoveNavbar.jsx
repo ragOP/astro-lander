@@ -15,13 +15,13 @@ const LoveNavbar = () => {
 
           {/* Centered Brand Logo */}
           <div className="flex-shrink-0 absolute left-1/2 transform -translate-x-1/2">
-            <Link to="/home" className="flex items-center space-x-2 sm:space-x-4 hover:opacity-80 transition-opacity">
+            {/* <Link to="/home" className="flex items-center space-x-2 sm:space-x-4 hover:opacity-80 transition-opacity"> */}
               <img
                 src="/brand-logo.png"
                 alt="Astro Soul Logo"
                 className="h-12 w-auto object-contain"
               />
-            </Link>
+            {/* </Link> */}
           </div>
 
           {/* Right side - Cart */}
