@@ -203,6 +203,14 @@ const TestimonialCard = ({ testimonial }) => {
           </p>
         </div>
       </div>
+
+   <a
+  href="/privacy"
+  className="text-purple-700 hover:text-purple-500 underline cursor-pointer"
+>
+  Privacy and support
+</a>
+
     </div>
   );
 };
