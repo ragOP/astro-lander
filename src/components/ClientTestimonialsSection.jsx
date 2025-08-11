@@ -209,7 +209,7 @@ const TestimonialCard = ({ testimonial }) => {
             href="/privacy"
             className="relative z-20 inline-block text-purple-200 hover:text-white underline underline-offset-4 decoration-purple-300/60 hover:decoration-white transition-colors"
           >
-            Privacy and Support
+            Privacy and Supports
           </a>
         </div>
 
