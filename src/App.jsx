@@ -15,6 +15,7 @@ import SignatureRecord from './pages/SignatureRecord';
 import SignatureOrderConfirmation from './pages/SignatureOrderConfirmation';
 import FortuneReport from './pages/FortuneReport';
 
+import Privacy from './pages/Privacy';
 
 // Main App Component
 function App() {
@@ -37,6 +38,7 @@ function App() {
           <Route path="/signature-record" element={<SignatureRecord />} />
           <Route path="/signature-order-confirmation" element={<SignatureOrderConfirmation />} />
           <Route path="/fortune-report" element={<FortuneReport />} />
+          <Route path="/privacy" element={<Privacy />} />
         </Routes>
       </div>
     </Router>

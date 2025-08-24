@@ -16,7 +16,7 @@ const ProductDetail = () => {
                 <div className="bg-gradient-to-r from-rose-400 to-pink-400 rounded-2xl overflow-hidden">
 
                     <img
-                        src="/astro-meet.png"
+                        src="/astro-item-1.png"
                         alt="Couple with Love Analysis Report"
                         className="w-full object-cover"
                     />
