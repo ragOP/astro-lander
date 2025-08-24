@@ -13,6 +13,7 @@ import Signature from './pages/Signature';
 import SignatureCart from './pages/SignatureCart';
 import SignatureRecord from './pages/SignatureRecord';
 import SignatureOrderConfirmation from './pages/SignatureOrderConfirmation';
+import FortuneReport from './pages/FortuneReport';
 
 
 // Main App Component
@@ -35,6 +36,7 @@ function App() {
           <Route path="/signature-cart" element={<SignatureCart />} />
           <Route path="/signature-record" element={<SignatureRecord />} />
           <Route path="/signature-order-confirmation" element={<SignatureOrderConfirmation />} />
+          <Route path="/fortune-report" element={<FortuneReport />} />
         </Routes>
       </div>
     </Router>
