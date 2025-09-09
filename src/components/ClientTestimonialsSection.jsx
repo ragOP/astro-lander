@@ -211,7 +211,7 @@ const TestimonialCard = ({ testimonial }) => {
           >
             Privacy and Supports
           </a>
-  <p>SAKSHI SRIVASTAVA
+  <p className="text-white">SAKSHI SRIVASTAVA
 SPEKLIO MEDIA --09PTKPS8265R1ZX</p>
         </div>
 
