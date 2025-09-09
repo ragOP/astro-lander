@@ -80,6 +80,8 @@ export default function PolicyPage() {
         <h1 className="text-4xl font-extrabold text-purple-700 mb-6 text-center">
           Policies & Support
         </h1>
+        <h5>SAKSHI SRIVASTAVA
+SPEKLIO MEDIA--09PTKPS8265R1ZX</h5>
         {sections.map((section, idx) => (
           <div key={idx} className="mb-10 border-b border-purple-200 pb-6">
             <h2 className="text-2xl font-bold text-purple-800 mb-2">
