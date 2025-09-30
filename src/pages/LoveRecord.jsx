@@ -11,7 +11,7 @@ import { BACKEND_URL } from "../utils/backendUrl";
  *
  * Drop-in replacement for your existing component.
  */
-const LoveRecord: React.FC = () => {
+const LoveRecord = () => {
   const [orders, setOrders] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
