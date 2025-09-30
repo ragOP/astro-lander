@@ -1,22 +1,20 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { Heart, Calendar, Filter, Phone, Mail, MapPin, User, Clock, IndianRupee } from "lucide-react";
+import { Heart, Calendar, Filter, Phone, Mail, MapPin, User, Clock, Star } from "lucide-react";
 import Navbar from "../components/love/Navbar";
 import { BACKEND_URL } from "../utils/backendUrl";
 
 /**
- * LoveRecord (Mobile-first + “love” theme + date filters)
- * - Mobile: beautiful card layout; Desktop: clean table
+ * LoveRecord (JSX version)
+ * - Mobile-first card layout; desktop table
  * - Filters: Today (default), Yesterday, All
- * - Pastel rose gradient, subtle hearts, smooth transitions
- *
- * Drop-in replacement for your existing component.
+ * - Soft rose theme + floating hearts
  */
 const LoveRecord = () => {
-  const [orders, setOrders] = useState<any[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
-  const [filter, setFilter] = useState<"today" | "yesterday" | "all">("today"); // default = today
-  const [search, setSearch] = useState<string>("");
+  const [orders, setOrders] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [filter, setFilter] = useState("today"); // "today" | "yesterday" | "all"
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     fetchOrders();
@@ -28,12 +26,12 @@ const LoveRecord = () => {
       setLoading(true);
       const res = await fetch(`${BACKEND_URL}/api/lander2/get-orders`);
       const result = await res.json();
-      if (result?.success) {
+      if (result && result.success) {
         setOrders(Array.isArray(result.data) ? result.data : []);
       } else {
         setError("Failed to fetch love orders");
       }
-    } catch (err: any) {
+    } catch (err) {
       setError("Error fetching love orders: " + (err?.message || "Unknown error"));
     } finally {
       setLoading(false);
@@ -41,7 +39,7 @@ const LoveRecord = () => {
   };
 
   // ---------- Date helpers ----------
-  const fmtDate = (dateString?: string) => {
+  const fmtDate = (dateString) => {
     if (!dateString) return "-";
     try {
       return new Date(dateString).toLocaleDateString();
@@ -50,7 +48,7 @@ const LoveRecord = () => {
     }
   };
 
-  const fmtDateTime = (dateString?: string) => {
+  const fmtDateTime = (dateString) => {
     if (!dateString) return "-";
     try {
       return new Date(dateString).toLocaleString();
@@ -60,7 +58,7 @@ const LoveRecord = () => {
   };
 
   // Normalize to YYYY-MM-DD for comparison in local time
-  const ymd = (d: Date) => {
+  const ymd = (d) => {
     const yr = d.getFullYear();
     const m = `${d.getMonth() + 1}`.padStart(2, "0");
     const day = `${d.getDate()}`.padStart(2, "0");
@@ -74,7 +72,7 @@ const LoveRecord = () => {
     return ymd(d);
   })();
 
-  const orderYMD = (od?: string) => {
+  const orderYMD = (od) => {
     if (!od) return "";
     const d = new Date(od);
     return ymd(d);
@@ -121,7 +119,6 @@ const LoveRecord = () => {
       <div className="min-h-screen bg-gradient-to-br from-rose-50 via-pink-50 to-pink-100">
         <Navbar />
         <div className="relative">
-          {/* Floating hearts */}
           <HeartsBackground />
           <div className="flex items-center justify-center min-h-[70vh] px-6">
             <div className="text-center">
@@ -163,7 +160,6 @@ const LoveRecord = () => {
       <Navbar />
 
       <div className="relative">
-        {/* Floating hearts */}
         <HeartsBackground />
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-6 pb-16">
@@ -234,12 +230,7 @@ const LoveRecord = () => {
               {/* Mobile cards */}
               <div className="mt-6 grid gap-4 md:hidden">
                 {filtered.map((o) => (
-                  <MobileOrderCard
-                    key={o?._id}
-                    o={o}
-                    fmtDate={fmtDate}
-                    fmtDateTime={fmtDateTime}
-                  />
+                  <MobileOrderCard key={o?._id} o={o} fmtDate={fmtDate} fmtDateTime={fmtDateTime} />
                 ))}
               </div>
 
@@ -298,9 +289,7 @@ const LoveRecord = () => {
                             : "-"}
                         </Td>
                         <Td className="text-right font-semibold">
-                          {typeof o?.amount === "number" || (typeof o?.amount === "string" && o?.amount !== "")
-                            ? `₹${o.amount}`
-                            : "-"}
+                          {o?.amount !== undefined && o?.amount !== null && `${"₹"}${o?.amount}`}
                         </Td>
                         <Td>{fmtDateTime(o?.orderDate)}</Td>
                       </tr>
@@ -320,20 +309,15 @@ export default LoveRecord;
 
 /* --------------------------- Subcomponents --------------------------- */
 
-const Th: React.FC<React.PropsWithChildren<{ className?: string }>> = ({ children, className = "" }) => (
+const Th = ({ children, className = "" }) => (
   <th className={`px-4 py-3 text-xs font-bold uppercase tracking-wider ${className}`}>{children}</th>
 );
 
-const Td: React.FC<React.PropsWithChildren<{ className?: string }>> = ({ children, className = "" }) => (
+const Td = ({ children, className = "" }) => (
   <td className={`px-4 py-3 align-top ${className}`}>{children}</td>
 );
 
-const FilterPill: React.FC<{
-  active?: boolean;
-  onClick?: () => void;
-  label: string;
-  count?: number;
-}> = ({ active, onClick, label, count = 0 }) => {
+const FilterPill = ({ active, onClick, label, count = 0 }) => {
   return (
     <button
       onClick={onClick}
@@ -358,11 +342,7 @@ const FilterPill: React.FC<{
   );
 };
 
-const MobileOrderCard: React.FC<{
-  o: any;
-  fmtDate: (s?: string) => string;
-  fmtDateTime: (s?: string) => string;
-}> = ({ o, fmtDate, fmtDateTime }) => {
+const MobileOrderCard = ({ o, fmtDate, fmtDateTime }) => {
   const products = Array.isArray(o?.additionalProducts) ? o.additionalProducts : [];
   return (
     <div className="rounded-2xl border border-rose-200 bg-white/80 backdrop-blur p-4 shadow-sm">
@@ -381,12 +361,7 @@ const MobileOrderCard: React.FC<{
             <Clock size={14} /> {fmtDateTime(o?.orderDate)}
           </div>
           <div className="mt-1 inline-flex items-center gap-1 rounded-full bg-rose-50 text-rose-700 text-xs px-2 py-1 border border-rose-200">
-            <IndianRupee size={12} />
-            <span className="font-semibold">
-              {typeof o?.amount === "number" || (typeof o?.amount === "string" && o?.amount !== "")
-                ? `₹${o?.amount}`
-                : "-"}
-            </span>
+            <span className="font-semibold">{`₹${o?.amount ?? "-"}`}</span>
           </div>
         </div>
       </div>
@@ -428,7 +403,7 @@ const MobileOrderCard: React.FC<{
         <div className="text-sm text-rose-700/70 mb-1">Additional Products</div>
         {products?.length ? (
           <div className="flex flex-wrap gap-2">
-            {products.map((p: string, idx: number) => (
+            {products.map((p, idx) => (
               <span
                 key={`${p}-${idx}`}
                 className="inline-flex items-center gap-1 rounded-full bg-rose-50 text-rose-700 border border-rose-200 px-3 py-1 text-xs"
@@ -446,11 +421,7 @@ const MobileOrderCard: React.FC<{
   );
 };
 
-const Row: React.FC<{ icon: React.ReactNode; label: string; value: React.ReactNode }> = ({
-  icon,
-  label,
-  value,
-}) => (
+const Row = ({ icon, label, value }) => (
   <div className="flex items-start gap-2">
     <div className="mt-0.5 text-rose-400">{icon}</div>
     <div className="flex-1">
@@ -463,7 +434,7 @@ const Row: React.FC<{ icon: React.ReactNode; label: string; value: React.ReactNo
 /**
  * Decorative animated hearts background (very light)
  */
-const HeartsBackground: React.FC = () => {
+const HeartsBackground = () => {
   return (
     <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
       <div className="animate-[float_12s_ease-in-out_infinite] absolute -left-10 top-10 opacity-20">
