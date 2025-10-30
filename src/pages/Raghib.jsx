@@ -62,13 +62,12 @@ const Raghib = () => {
       >
         <nav className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between py-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 rounded-xl flex items-center justify-center shadow-lg shadow-purple-500/50 animate-pulse">
-                <span className="text-white font-bold text-lg">L&M</span>
-              </div>
-              <span className="font-bold text-xl bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                Love & Money
-              </span>
+            <div className="flex justify-center items-center h-16 sm:h-20">
+              <img
+                src="/brand-logo.png"
+                alt="Easy Soul Logo"
+                className="w-60 h-15 object-cover"
+              />
             </div>
 
             {/* Desktop Menu */}
@@ -159,16 +158,22 @@ const Raghib = () => {
       </header>
 
       {/* HERO SECTION - REDESIGNED */}
-      <section className="min-h-screen pt-24 pb-16 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center relative overflow-hidden">
+      <section className="min-h-screen pt-24 pb-16 bg-gradient-to-br from-slate-950 via-purple-950/50 to-slate-950 flex items-center relative overflow-hidden">
+        {/* Enhanced Animated Background Blobs */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-purple-500/30 via-pink-500/20 to-transparent rounded-full blur-[100px] animate-pulse"></div>
           <div
-            className="absolute bottom-20 right-10 w-[500px] h-[500px] bg-pink-500/20 rounded-full blur-3xl animate-pulse"
-            style={{ animationDelay: "1s" }}
+            className="absolute bottom-20 right-10 w-[500px] h-[500px] bg-gradient-to-br from-pink-500/30 via-rose-500/20 to-transparent rounded-full blur-[120px] animate-pulse"
+            style={{ animationDelay: "1s", animationDuration: "4s" }}
           ></div>
           <div
-            className="absolute top-1/2 left-1/4 w-80 h-80 bg-yellow-500/15 rounded-full blur-3xl animate-pulse"
-            style={{ animationDelay: "2s" }}
+            className="absolute top-1/2 left-1/4 w-80 h-80 bg-gradient-to-br from-yellow-500/20 via-amber-500/15 to-transparent rounded-full blur-[100px] animate-pulse"
+            style={{ animationDelay: "2s", animationDuration: "5s" }}
+          ></div>
+          {/* Additional mesh gradients for depth */}
+          <div
+            className="absolute top-1/3 right-1/3 w-72 h-72 bg-gradient-to-br from-indigo-500/15 to-transparent rounded-full blur-[80px] animate-pulse"
+            style={{ animationDelay: "1.5s" }}
           ></div>
         </div>
 
@@ -176,7 +181,8 @@ const Raghib = () => {
           {/* DESKTOP Layout */}
           <div className="hidden lg:grid lg:grid-cols-2 gap-16 items-center mb-16">
             <div>
-              <div className="inline-flex items-center space-x-2 bg-yellow-500/10 backdrop-blur-xl border border-yellow-500/30 rounded-full px-6 py-3 shadow-lg mb-8">
+              {/* Enhanced Badge with better glassmorphism */}
+              <div className="inline-flex items-center space-x-2 bg-yellow-500/10 backdrop-blur-xl border border-yellow-500/30 rounded-full px-6 py-3 shadow-[0_8px_32px_rgba(234,179,8,0.2)] mb-8 hover:shadow-[0_8px_40px_rgba(234,179,8,0.3)] transition-all duration-300">
                 <Sparkles className="w-5 h-5 text-yellow-400 animate-pulse" />
                 <span
                   className="font-bold text-yellow-400 text-sm tracking-wide"
@@ -186,35 +192,38 @@ const Raghib = () => {
                 </span>
               </div>
 
+              {/* Enhanced Heading with better gradient */}
               <h1
-                className="text-5xl lg:text-6xl font-black bg-gradient-to-r from-purple-300 via-pink-300 to-yellow-300 bg-clip-text text-transparent leading-tight mb-6"
+                className="text-5xl lg:text-6xl font-black bg-gradient-to-r from-purple-200 via-pink-200 to-yellow-200 bg-clip-text text-transparent leading-tight mb-6 drop-shadow-[0_0_30px_rgba(168,85,247,0.3)]"
                 style={{ fontFamily: "monospace" }}
               >
                 Feeling like luck's just not on your side lately?
               </h1>
 
               <p
-                className="text-2xl text-gray-300 leading-relaxed mb-8"
+                className="text-2xl text-gray-200/90 leading-relaxed mb-8"
                 style={{ fontFamily: "'Montserrat'" }}
               >
                 You're trying hard, giving your best… but love feels distant 💔
                 and money keeps slipping away 💸
               </p>
               <p
-                className="text-2xl text-gray-300 leading-relaxed mb-8"
+                className="text-2xl text-gray-200/90 leading-relaxed mb-8"
                 style={{ fontFamily: "'Montserrat'" }}
               >
                 What if the problem isn't you… What if it's your energy that's
                 out of balance? 🌌
               </p>
-              <div className="bg-white/5 backdrop-blur-2xl rounded-3xl p-6 border border-white/20 shadow-2xl mb-8">
+
+              {/* Enhanced Glass Card with better depth */}
+              <div className="bg-white/[0.03] backdrop-blur-2xl rounded-3xl p-6 border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3),0_0_1px_rgba(255,255,255,0.5)_inset] mb-8 hover:bg-white/[0.05] transition-all duration-300">
                 <p
-                  className="text-xl text-gray-200 leading-relaxed"
+                  className="text-xl text-gray-100 leading-relaxed"
                   style={{ fontFamily: "'Poppins', sans-serif" }}
                 >
                   Introducing the{" "}
                   <span
-                    className="font-black text-2xl bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
+                    className="font-black text-2xl bg-gradient-to-r from-purple-300 via-pink-300 to-rose-300 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(236,72,153,0.5)]"
                     style={{ fontFamily: "'Poppins', sans-serif" }}
                   >
                     Love & Money Attractor Bracelet
@@ -224,35 +233,41 @@ const Raghib = () => {
               </div>
             </div>
 
+            {/* Enhanced Image Section with better effects */}
             <div className="flex justify-end">
               <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-600/30 via-pink-600/30 to-yellow-600/30 rounded-[3rem] blur-3xl opacity-60 group-hover:opacity-80 transition-opacity duration-500 scale-110"></div>
-                <div className="relative w-[500px] h-[500px] rounded-[3rem] shadow-2xl shadow-purple-500/30 overflow-hidden border-4 border-white/20 backdrop-blur-sm transform group-hover:scale-105 transition-all duration-500">
+                {/* Enhanced glow effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-600/40 via-pink-600/40 to-yellow-600/40 rounded-[3rem] blur-[60px] opacity-70 group-hover:opacity-90 group-hover:blur-[80px] transition-all duration-700 scale-105 animate-pulse"></div>
+
+                {/* Main image container with enhanced styling */}
+                <div className="relative w-[500px] h-[500px] rounded-[3rem] shadow-[0_20px_60px_rgba(168,85,247,0.4),0_0_80px_rgba(236,72,153,0.2)] overflow-hidden border-[3px] border-white/30 backdrop-blur-sm transform group-hover:scale-[1.03] transition-all duration-700 group-hover:shadow-[0_25px_80px_rgba(168,85,247,0.5),0_0_100px_rgba(236,72,153,0.3)]">
                   <img
                     src={hero}
                     alt="Love & Money Attractor Bracelet"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-purple-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-purple-900/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 </div>
-                <div className="absolute -top-6 -right-6 w-20 h-20 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-3xl flex items-center justify-center shadow-2xl shadow-yellow-500/50 animate-spin-slow">
-                  <Sparkles className="w-10 h-10 text-white" />
+
+                {/* Enhanced floating icons with better animations */}
+                <div className="absolute -top-6 -right-6 w-20 h-20 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-3xl flex items-center justify-center shadow-[0_10px_40px_rgba(251,191,36,0.6)] animate-float">
+                  <Sparkles className="w-10 h-10 text-white drop-shadow-lg" />
                 </div>
-                <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-gradient-to-r from-pink-500 to-rose-500 rounded-3xl flex items-center justify-center shadow-2xl shadow-pink-500/50 animate-bounce">
-                  <Heart className="w-8 h-8 text-white" />
+                <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-600 rounded-3xl flex items-center justify-center shadow-[0_10px_40px_rgba(236,72,153,0.6)] animate-bounce-slow">
+                  <Heart className="w-8 h-8 text-white drop-shadow-lg" />
                 </div>
-                <div className="absolute top-1/3 -left-8 w-14 h-14 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center shadow-2xl shadow-green-500/50 animate-pulse">
-                  <DollarSign className="w-7 h-7 text-white" />
+                <div className="absolute top-1/3 -left-8 w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center shadow-[0_10px_40px_rgba(34,197,94,0.6)] animate-pulse-slow">
+                  <DollarSign className="w-7 h-7 text-white drop-shadow-lg" />
                 </div>
               </div>
             </div>
           </div>
 
-          {/* MOBILE Layout */}
+          {/* MOBILE Layout with enhanced styling */}
           <div className="lg:hidden space-y-8 mb-12">
             <div className="flex justify-center">
-              <div className="inline-flex items-center space-x-2 bg-yellow-500/10 backdrop-blur-xl border border-yellow-500/30 rounded-full px-6 py-3 shadow-lg">
-                <Sparkles className="w-5 h-5 text-yellow-400" />
+              <div className="inline-flex items-center space-x-2 bg-yellow-500/10 backdrop-blur-xl border border-yellow-500/30 rounded-full px-6 py-3 shadow-[0_8px_32px_rgba(234,179,8,0.2)]">
+                <Sparkles className="w-5 h-5 text-yellow-400 animate-pulse" />
                 <span
                   className="font-bold text-yellow-400 text-sm"
                   style={{ fontFamily: "'Poppins', sans-serif" }}
@@ -263,16 +278,17 @@ const Raghib = () => {
             </div>
 
             <h1
-              className="text-4xl sm:text-5xl font-black bg-gradient-to-r from-purple-300 via-pink-300 to-yellow-300 bg-clip-text text-transparent leading-tight text-center"
+              className="text-4xl sm:text-5xl font-black bg-gradient-to-r from-purple-200 via-pink-200 to-yellow-200 bg-clip-text text-transparent leading-tight text-center drop-shadow-[0_0_30px_rgba(168,85,247,0.3)]"
               style={{ fontFamily: "monospace" }}
             >
               Feeling like luck's just not on your side lately?
             </h1>
 
+            {/* Enhanced mobile image */}
             <div className="flex justify-center">
               <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-600/30 via-pink-600/30 to-yellow-600/30 rounded-3xl blur-2xl opacity-60"></div>
-                <div className="relative w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] rounded-3xl overflow-hidden border-4 border-white/15 shadow-2xl">
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-600/40 via-pink-600/40 to-yellow-600/40 rounded-3xl blur-[40px] opacity-70 animate-pulse"></div>
+                <div className="relative w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] rounded-3xl overflow-hidden border-[3px] border-white/25 shadow-[0_15px_50px_rgba(168,85,247,0.4)]">
                   <img
                     src={hero}
                     alt="Love & Money Bracelet"
@@ -281,29 +297,30 @@ const Raghib = () => {
                 </div>
               </div>
             </div>
+
             <p
-              className="text-xl text-gray-300 leading-relaxed text-center px-4"
+              className="text-xl text-gray-200/90 leading-relaxed text-center px-4"
               style={{ fontFamily: "'Montserrat'" }}
             >
               You're trying hard… but love feels distant 💔 and money keeps
               slipping away 💸
             </p>
             <p
-              className="text-xl text-gray-300 leading-relaxed text-center px-4"
+              className="text-xl text-gray-200/90 leading-relaxed text-center px-4"
               style={{ fontFamily: "'Montserrat'" }}
             >
               What if the problem isn't you… What if it's your energy that's out
               of balance? 🌌
             </p>
 
-            <div className="bg-white/5 backdrop-blur-2xl rounded-3xl p-5 border border-white/20 shadow-2xl mx-4">
+            <div className="bg-white/[0.03] backdrop-blur-2xl rounded-3xl p-5 border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3),0_0_1px_rgba(255,255,255,0.5)_inset] mx-4">
               <p
-                className="text-base text-gray-200 leading-relaxed text-center"
+                className="text-base text-gray-100 leading-relaxed text-center"
                 style={{ fontFamily: "'Poppins', sans-serif" }}
               >
                 Introducing the{" "}
                 <span
-                  className="font-black text-lg bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
+                  className="font-black text-lg bg-gradient-to-r from-purple-300 via-pink-300 to-rose-300 bg-clip-text text-transparent"
                   style={{ fontFamily: "'Poppins', sans-serif" }}
                 >
                   Love & Money Attractor Bracelet
@@ -313,12 +330,15 @@ const Raghib = () => {
               </p>
             </div>
           </div>
+
+          {/* Enhanced Desktop Bento Grid */}
           <div className="hidden lg:grid grid-cols-12 gap-8 items-start">
             <div className="col-span-7 grid grid-cols-2 gap-6">
-              <div className="col-span-2 lg:col-span-1 lg:row-span-2 bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-xl group hover:scale-105 hover:border-white/30 hover:shadow-2xl hover:shadow-pink-500/20 transition-all duration-500 animate-fade-in">
+              {/* Large Love Card with enhanced styling */}
+              <div className="col-span-2 lg:col-span-1 lg:row-span-2 bg-white/[0.03] backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3),0_0_1px_rgba(255,255,255,0.3)_inset] group hover:scale-[1.02] hover:border-pink-500/40 hover:shadow-[0_12px_48px_rgba(236,72,153,0.3)] transition-all duration-500">
                 <div className="flex justify-center mb-6">
-                  <div className="w-16 h-16 rounded-xl bg-gradient-to-r from-pink-500 to-rose-600 flex items-center justify-center shadow-lg group-hover:rotate-12 group-hover:scale-110 transition-all duration-300">
-                    <Heart className="w-8 h-8 text-white" />
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center shadow-[0_8px_32px_rgba(236,72,153,0.5)] group-hover:rotate-12 group-hover:scale-110 transition-all duration-500">
+                    <Heart className="w-8 h-8 text-white drop-shadow-lg" />
                   </div>
                 </div>
 
@@ -339,10 +359,11 @@ const Raghib = () => {
                 </div>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-6 border border-white/20 shadow-xl group hover:scale-105 transition-all duration-500">
+              {/* Enhanced feature cards */}
+              <div className="bg-white/[0.03] backdrop-blur-xl rounded-3xl p-6 border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3)] group hover:scale-105 hover:border-green-500/40 hover:shadow-[0_12px_48px_rgba(34,197,94,0.3)] transition-all duration-500">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-green-500 to-emerald-600 flex items-center justify-center shadow-lg group-hover:rotate-12 transition-all duration-300 flex-shrink-0">
-                    <DollarSign className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center shadow-[0_6px_24px_rgba(34,197,94,0.5)] group-hover:rotate-12 transition-all duration-300 flex-shrink-0">
+                    <DollarSign className="w-6 h-6 text-white drop-shadow-md" />
                   </div>
                   <div>
                     <h3
@@ -361,10 +382,10 @@ const Raghib = () => {
                 </div>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-6 border border-white/20 shadow-xl group hover:scale-105 transition-all duration-500">
+              <div className="bg-white/[0.03] backdrop-blur-xl rounded-3xl p-6 border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3)] group hover:scale-105 hover:border-purple-500/40 hover:shadow-[0_12px_48px_rgba(168,85,247,0.3)] transition-all duration-500">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-purple-500 to-indigo-600 flex items-center justify-center shadow-lg group-hover:rotate-12 transition-all duration-300 flex-shrink-0">
-                    <Sparkles className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center shadow-[0_6px_24px_rgba(168,85,247,0.5)] group-hover:rotate-12 transition-all duration-300 flex-shrink-0">
+                    <Sparkles className="w-6 h-6 text-white drop-shadow-md" />
                   </div>
                   <div>
                     <h3
@@ -382,8 +403,10 @@ const Raghib = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Enhanced CTA Button */}
               <button
-                className="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-yellow-500 text-white text-xl px-8 py-5 rounded-2xl shadow-2xl transition-all duration-300 hover:scale-105 font-bold relative overflow-hidden group mb-6"
+                className="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-yellow-500 text-white text-xl px-8 py-5 rounded-2xl shadow-[0_10px_40px_rgba(168,85,247,0.4)] transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_15px_60px_rgba(168,85,247,0.6)] font-bold relative overflow-hidden group mb-6"
                 onClick={() => navigate("/raghib-cart")}
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-yellow-500 via-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
@@ -391,17 +414,23 @@ const Raghib = () => {
                   className="relative flex items-center justify-center space-x-2"
                   style={{ fontFamily: "'Poppins', sans-serif" }}
                 >
-                  <Zap className="w-6 h-6" />
+                  <Zap className="w-6 h-6 group-hover:animate-pulse" />
                   <span>Get My Bracelet Now</span>
                 </span>
               </button>
             </div>
 
+            {/* Enhanced Pricing Card */}
             <div className="col-span-5">
-              <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl relative overflow-hidden sticky top-24">
-                <div className="absolute -top-10 -right-10 w-40 h-40 bg-yellow-500/15 rounded-full blur-3xl"></div>
+              <div className="bg-white/[0.03] backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-[0_12px_48px_rgba(0,0,0,0.4),0_0_1px_rgba(255,255,255,0.3)_inset] relative overflow-hidden sticky top-24 hover:border-yellow-500/40 transition-all duration-500">
+                <div className="absolute -top-10 -right-10 w-40 h-40 bg-yellow-500/20 rounded-full blur-3xl animate-pulse"></div>
+                <div
+                  className="absolute -bottom-10 -left-10 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl animate-pulse"
+                  style={{ animationDelay: "1s" }}
+                ></div>
+
                 <div className="relative z-10">
-                  <div className="inline-flex items-center space-x-2 bg-red-500/20 text-red-300 border border-red-500/40 rounded-full px-4 py-2 mb-6">
+                  <div className="inline-flex items-center space-x-2 bg-red-500/20 text-red-300 border border-red-500/50 rounded-full px-4 py-2 mb-6 shadow-[0_4px_16px_rgba(239,68,68,0.3)]">
                     <Clock className="w-4 h-4 animate-pulse" />
                     <span
                       className="text-sm font-semibold"
@@ -410,14 +439,15 @@ const Raghib = () => {
                       Limited Offer
                     </span>
                   </div>
+
                   <p
-                    className="text-gray-200 text-lg mb-2"
+                    className="text-gray-100 text-lg mb-2"
                     style={{ fontFamily: "'Poppins', sans-serif" }}
                   >
                     🛍 Get Yours for Just
                   </p>
                   <p
-                    className="text-yellow-400 text-6xl font-black leading-tight mb-3"
+                    className="text-yellow-400 text-6xl font-black leading-tight mb-3 drop-shadow-[0_0_30px_rgba(250,204,21,0.5)]"
                     style={{ fontFamily: "'Poppins', sans-serif" }}
                   >
                     ₹799
@@ -430,25 +460,29 @@ const Raghib = () => {
                     <span className="text-yellow-400 font-bold">₹599</span>)
                   </p>
 
+                  {/* Enhanced trust badges */}
                   <div className="grid grid-cols-3 gap-3">
-                    <div className="bg-white/5 backdrop-blur-md rounded-xl p-3 text-center border border-white/10">
+                    <div className="bg-white/[0.05] backdrop-blur-md rounded-xl p-3 text-center border border-white/15 hover:border-yellow-500/40 hover:bg-white/[0.08] transition-all duration-300">
                       <div className="flex justify-center text-yellow-400 mb-1">
                         {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="w-4 h-4 fill-current" />
+                          <Star
+                            key={i}
+                            className="w-4 h-4 fill-current drop-shadow-[0_0_8px_rgba(250,204,21,0.6)]"
+                          />
                         ))}
                       </div>
                       <p className="text-[11px] text-gray-300 font-semibold">
                         4.9/5
                       </p>
                     </div>
-                    <div className="bg-white/5 backdrop-blur-md rounded-xl p-3 text-center border border-white/10">
-                      <Heart className="w-5 h-5 text-pink-400 mx-auto mb-1" />
+                    <div className="bg-white/[0.05] backdrop-blur-md rounded-xl p-3 text-center border border-white/15 hover:border-pink-500/40 hover:bg-white/[0.08] transition-all duration-300">
+                      <Heart className="w-5 h-5 text-pink-400 mx-auto mb-1 drop-shadow-[0_0_8px_rgba(236,72,153,0.6)]" />
                       <p className="text-[11px] text-gray-300 font-semibold">
                         1000+
                       </p>
                     </div>
-                    <div className="bg-white/5 backdrop-blur-md rounded-xl p-3 text-center border border-white/10">
-                      <Shield className="w-5 h-5 text-green-400 mx-auto mb-1" />
+                    <div className="bg-white/[0.05] backdrop-blur-md rounded-xl p-3 text-center border border-white/15 hover:border-green-500/40 hover:bg-white/[0.08] transition-all duration-300">
+                      <Shield className="w-5 h-5 text-green-400 mx-auto mb-1 drop-shadow-[0_0_8px_rgba(34,197,94,0.6)]" />
                       <p className="text-[11px] text-gray-300 font-semibold">
                         30-Day
                       </p>
@@ -457,27 +491,22 @@ const Raghib = () => {
                 </div>
               </div>
             </div>
-            {/* <button
-              className="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-yellow-500 text-white text-lg px-6 py-4 rounded-2xl shadow-xl font-bold mb-4"
-              style={{ fontFamily: "'Poppins', sans-serif" }}
-            >
-              Get My Bracelet Nowsss
-            </button> */}
           </div>
 
-          {/* MOBILE Bento */}
+          {/* Enhanced Mobile Bento */}
           <div className="lg:hidden px-4">
             <button
               onClick={() => navigate("/raghib-cart")}
-              className="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-yellow-500 text-white text-lg px-6 py-4 rounded-2xl shadow-xl font-bold mb-4"
+              className="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-yellow-500 text-white text-lg px-6 py-4 rounded-2xl shadow-[0_10px_40px_rgba(168,85,247,0.4)] font-bold mb-4 hover:shadow-[0_15px_60px_rgba(168,85,247,0.6)] transition-all duration-300 active:scale-95"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               Get My Bracelet Now
             </button>
+
             <div className="grid grid-cols-6 gap-4">
-              <div className="col-span-6 bg-white/5 backdrop-blur-xl rounded-3xl p-5 border border-white/20 shadow-xl">
+              <div className="col-span-6 bg-white/[0.03] backdrop-blur-xl rounded-3xl p-5 border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-pink-500 to-rose-600 flex items-center justify-center shadow-lg flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center shadow-[0_6px_24px_rgba(236,72,153,0.5)] flex-shrink-0">
                     <Heart className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -497,8 +526,8 @@ const Raghib = () => {
                 </div>
               </div>
 
-              <div className="col-span-3 bg-white/5 backdrop-blur-xl rounded-3xl p-4 border border-white/20 shadow-xl">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-green-500 to-emerald-600 flex items-center justify-center shadow-lg mb-3 mx-auto">
+              <div className="col-span-3 bg-white/[0.03] backdrop-blur-xl rounded-3xl p-4 border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center shadow-[0_6px_24px_rgba(34,197,94,0.5)] mb-3 mx-auto">
                   <DollarSign className="w-5 h-5 text-white" />
                 </div>
                 <h3
@@ -515,8 +544,8 @@ const Raghib = () => {
                 </p>
               </div>
 
-              <div className="col-span-3 bg-white/5 backdrop-blur-xl rounded-3xl p-4 border border-white/20 shadow-xl">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-purple-500 to-indigo-600 flex items-center justify-center shadow-lg mb-3 mx-auto">
+              <div className="col-span-3 bg-white/[0.03] backdrop-blur-xl rounded-3xl p-4 border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center shadow-[0_6px_24px_rgba(168,85,247,0.5)] mb-3 mx-auto">
                   <Sparkles className="w-5 h-5 text-white" />
                 </div>
                 <h3
@@ -533,12 +562,17 @@ const Raghib = () => {
                 </p>
               </div>
 
-              <div className="col-span-6 bg-white/5 backdrop-blur-xl rounded-3xl p-6 border border-white/20 shadow-2xl relative overflow-hidden mt-2">
-                <div className="absolute -top-10 -right-10 w-32 h-32 bg-yellow-500/15 rounded-full blur-2xl"></div>
+              <div className="col-span-6 bg-white/[0.03] backdrop-blur-xl rounded-3xl p-6 border border-white/20 shadow-[0_12px_48px_rgba(0,0,0,0.4)] relative overflow-hidden mt-2">
+                <div className="absolute -top-10 -right-10 w-32 h-32 bg-yellow-500/20 rounded-full blur-2xl animate-pulse"></div>
+                <div
+                  className="absolute -bottom-10 -left-10 w-32 h-32 bg-purple-500/20 rounded-full blur-2xl animate-pulse"
+                  style={{ animationDelay: "1s" }}
+                ></div>
+
                 <div className="relative z-10">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="inline-flex items-center space-x-2 bg-red-500/20 text-red-300 border border-red-500/40 rounded-full px-3 py-1">
-                      <Clock className="w-4 h-4" />
+                    <span className="inline-flex items-center space-x-2 bg-red-500/20 text-red-300 border border-red-500/50 rounded-full px-3 py-1 shadow-[0_4px_16px_rgba(239,68,68,0.3)]">
+                      <Clock className="w-4 h-4 animate-pulse" />
                       <span
                         className="text-xs font-semibold"
                         style={{ fontFamily: "'Poppins', sans-serif" }}
@@ -554,26 +588,26 @@ const Raghib = () => {
                     </span>
                   </div>
                   <p
-                    className="text-gray-200 text-base mb-1"
+                    className="text-gray-100 text-base mb-1"
                     style={{ fontFamily: "'Poppins', sans-serif" }}
                   >
                     🛍 Get Yours for Just
                   </p>
                   <p
-                    className="text-yellow-400 text-5xl font-black leading-tight mb-4"
+                    className="text-yellow-400 text-5xl font-black leading-tight mb-4 drop-shadow-[0_0_30px_rgba(250,204,21,0.5)]"
                     style={{ fontFamily: "'Poppins', sans-serif" }}
                   >
                     ₹799
                   </p>
                   <button
                     onClick={() => navigate("/raghib-cart")}
-                    className="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-yellow-500 text-white text-lg px-6 py-4 rounded-2xl shadow-xl font-bold mb-4"
+                    className="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-yellow-500 text-white text-lg px-6 py-4 rounded-2xl shadow-[0_10px_40px_rgba(168,85,247,0.4)] font-bold mb-4 active:scale-95 transition-transform duration-200"
                     style={{ fontFamily: "'Poppins', sans-serif" }}
                   >
-                    Get My Bracelet Nowss
+                    Get My Bracelet Now
                   </button>
                   <div className="grid grid-cols-3 gap-2">
-                    <div className="bg-white/5 backdrop-blur-md rounded-xl p-2 text-center border border-white/10">
+                    <div className="bg-white/[0.05] backdrop-blur-md rounded-xl p-2 text-center border border-white/15">
                       <div className="flex justify-center text-yellow-400 mb-1">
                         {[...Array(5)].map((_, i) => (
                           <Star key={i} className="w-3 h-3 fill-current" />
@@ -581,11 +615,11 @@ const Raghib = () => {
                       </div>
                       <p className="text-[10px] text-gray-300">4.9/5</p>
                     </div>
-                    <div className="bg-white/5 backdrop-blur-md rounded-xl p-2 text-center border border-white/10">
+                    <div className="bg-white/[0.05] backdrop-blur-md rounded-xl p-2 text-center border border-white/15">
                       <Heart className="w-4 h-4 text-pink-400 mx-auto mb-1" />
                       <p className="text-[10px] text-gray-300">1000+</p>
                     </div>
-                    <div className="bg-white/5 backdrop-blur-md rounded-xl p-2 text-center border border-white/10">
+                    <div className="bg-white/[0.05] backdrop-blur-md rounded-xl p-2 text-center border border-white/15">
                       <Shield className="w-4 h-4 text-green-400 mx-auto mb-1" />
                       <p className="text-[10px] text-gray-300">30-Day</p>
                     </div>
@@ -1211,19 +1245,15 @@ const Raghib = () => {
                     </h3>
                   </div>
                   <div className="text-center">
-                    <h3
-                      className="text-lg font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
-                      style={{ fontFamily: "'Montserrat', sans-serif" }}
-                    >
-                      Our Bracelet ✅
+                    <h3 className="text-lg font-bold bg-gradient-to-r from-rose-400 to-orange-400 bg-clip-text text-transparent inline-flex items-center justify-center space-x-2 mx-auto">
+                      <span>Our Bracelet</span>
+                      <Check className="w-5 h-5 text-emerald-400" />
                     </h3>
                   </div>
                   <div className="text-center">
-                    <h3
-                      className="text-lg font-bold text-gray-500"
-                      style={{ fontFamily: "'Montserrat', sans-serif" }}
-                    >
-                      Others ❌
+                    <h3 className="text-lg font-bold bg-gradient-to-r from-rose-400 to-orange-400 bg-clip-text text-transparent inline-flex items-center justify-center space-x-2 mx-auto">
+                      <span>Others</span>
+                      <X className="w-5 h-5 text-red-400" />
                     </h3>
                   </div>
                 </div>
