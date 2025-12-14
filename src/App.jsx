@@ -19,6 +19,7 @@ import Privacy from "./pages/Privacy";
 import Raghib from "./pages/Raghib";
 import RaghibCart from "./pages/RaghibCart";
 import Kundali from "./Kundali";
+import Kundali2 from "./Kundali2";
 // Main App Component
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
            <Route path="/kundali" element={<Kundali />} />
+             <Route path="/kundali2" element={<Kundali2 />} />
           <Route path="/consultation" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/cart-2" element={<LoveCart />} />
